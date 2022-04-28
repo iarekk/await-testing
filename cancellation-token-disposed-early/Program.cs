@@ -19,8 +19,8 @@ static class Program
         Task t;
         string result = "initial value";
         
-        if (true)
-        {
+        if (true) // removing lines 22, 23 and 31 - so the code below isn't wrapped
+        {         //     - will ensure that the CTS is disposed at the end of the method, when the task is awaited
             // this 'using' is causing the issue
             // since the 'using' is wrapped inside a conditional block, cts is exposed at line 30
             // this means that it won't cancel the linked cancellation token source
